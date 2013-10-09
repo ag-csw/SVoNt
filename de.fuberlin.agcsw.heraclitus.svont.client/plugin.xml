@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.tigris.subversion.subclipse.commandCategory"
+            id="de.fuberlin.agcsw.heraclitus.svont.client.command.update"
+            name="SVoNt Update Command">
+      </command>
+      <command
+            categoryId="org.tigris.subversion.subclipse.commandCategory"
+            id="de.fuberlin.agcsw.heraclitus.svont.client.command.commit"
+            name="SVoNt Commit Command">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="de.fuberlin.agcsw.heraclitus.svont.client.WizCat"
+            name="SVoNt">
+      </category>
+      <wizard
+            category="de.fuberlin.agcsw.heraclitus.svont.client.WizCat"
+            class="de.fuberlin.agcsw.heraclitus.svont.client.ui.wizards.SVoNtCheckoutWizard"
+            id="de.fuberlin.agcsw.heraclitus.svont.ui.CheckoutWizard"
+            name="Checkout Project from SVoNt"
+            project="true">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="de.fuberlin.agcsw.heraclitus.svont.client.ui.ResourceContributions"
+            objectClass="org.eclipse.core.resources.mapping.ResourceMapping">
+         <action
+               class="de.fuberlin.agcsw.heraclitus.svont.client.ui.actions.SVoNtUpdateAction"
+               definitionId="de.fuberlin.agcsw.heraclitus.svont.client.command.update"
+               id="de.fuberlin.agcsw.heraclitus.svont.client.command.update"
+               label="SVoNt Update"
+               menubarPath="team.main/group1"
+               tooltip="%UpdateAction.tooltip">
+         </action>
+         <action
+               class="de.fuberlin.agcsw.heraclitus.svont.client.ui.actions.SVoNtCommitAction"
+               definitionId="de.fuberlin.agcsw.heraclitus.svont.client.command.commit"
+               id="de.fuberlin.agcsw.heraclitus.svont.client.command.commit"
+               label="SVoNt Commit"
+               menubarPath="team.main/group1">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="de.fuberlin.agcsw.ontoEclipse.ui.ProjectContribution"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="de.fuberlin.agcsw.heraclitus.svont.client.ui.actions.SetAsSVoNtAction"
+               enablesFor="1"
+               id="de.fuberlin.agcsw.heraclitus.svont.client.ui.action.SetAsSVoNt"
+               label="Load as SVoNt Project"
+               menubarPath="de.fuberlin.agcsw.heraclitus.backend.ui.popupMenu.OntologyMenu/ontologyGroup">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.decorators">
+      <decorator
+            adaptable="false"
+            class="de.fuberlin.agcsw.heraclitus.svont.client.ui.SVoNtLightweightDecorator"
+            id="de.fuberlin.agcsw.heraclitus.svont.client.ui.SVoNtDecorator"
+            label="SVoNt Concept Tree Decorator"
+            lightweight="true"
+            location="TOP_LEFT"
+            state="true">
+         <enablement>
+            <objectClass
+                  name="org.eclipse.jface.viewers.TreeNode">
+            </objectClass>
+         </enablement>
+         <description>
+            SVoNt Label Decorator
+         </description>
+      </decorator>
+   </extension>
+
+</plugin>

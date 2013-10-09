@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Client
+Bundle-SymbolicName: de.fuberlin.agcsw.heraclitus.svont.client;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.fuberlin.agcsw.heraclitus.svont.client.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.tigris.subversion.subclipse.core;bundle-version="1.6.5",
+ de.fuberlin.agcsw.heraclitus.backend;bundle-version="1.0.0",
+ org.tigris.subversion.subclipse.ui;bundle-version="1.6.5",
+ org.eclipse.team.core;bundle-version="3.5.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

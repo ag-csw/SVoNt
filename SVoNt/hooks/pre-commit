@@ -1,0 +1,58 @@
+#!/bin/sh
+
+exitcommit()
+{
+  echo "Error occured:" >&2
+  cat $ERRORRESULTTEMPPATH >&2
+  #rm -R "$REPOS$TMPDIR"
+  exit 1
+}
+
+#Pre-Commit args
+REPOS="$1"
+TXN="$2"
+
+#Base Paths
+JAVA=/usr/bin/java
+SVONTROOT=/home/mrothe/dev/svont/
+TMPDIR=/temp/
+HOOKJAR=hook.jar
+ERRORFILE=errorResult.txt
+
+#Filepaths
+SVONTJARPATH="$SVONTROOT$HOOKJAR"
+
+
+rm -R "$REPOS$TMPDIR"
+if [ -d "$REPOS$TMPDIR" ]; then
+	echo "temp Directory exists" >&2
+else 
+	echo "temp Directory does not exist.. creating one ...">&2
+	mkdir "$REPOS$TMPDIR"
+fi
+
+
+#Start Java svont processing
+#Arguments
+# Repository root Directory
+# SVoNt root Directory
+# Transaction Number
+# Temp Directory
+# Error Result File
+
+$JAVA -jar "$SVONTJARPATH" "$REPOS" "$SVONTROOT" "$TXN" "$TMPDIR" "$ERRORFILE" 
+
+# Test if an Error occured
+[ -f "$REPOS$TMPDIR$ERRORFILE" ] && exitcommit
+
+#return 0 when no error detected
+#remove Tempdirectory -- disable it for debugging
+rm -R "$REPOS$TMPDIR"
+echo "no Error" >&2
+exit 0
+
+
+
+
+
+

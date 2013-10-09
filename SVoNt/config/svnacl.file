@@ -1,0 +1,9 @@
+[groups]
+developers = mario
+
+[/]
+@developers = rw
+
+[test:/]
+@developers = rw
+

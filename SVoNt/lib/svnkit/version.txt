@@ -1,0 +1,3 @@
+SVNKit 1.3.2.6267
+Date: 2009-12-03
+Available at: http://svnkit.com/

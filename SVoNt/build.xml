@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- ====================================================================== 
+     07.12.2010 16:33:18                                                        
+
+     SVoNt    
+     
+     ANT build file for the SVoNt backend.
+                   
+     ralph                                                                
+     ====================================================================== -->
+<project name="SVoNt" default="dist" basedir=".">
+
+	<description>
+    	ANT build file for the SVoNt backend.
+    </description>
+
+	<!-- The following properties might need to be adjusted. -->
+	<property name="junit.jar.path" value="${eclipse.home}/plugins/org.junit_4.8.1.v4_8_1_v20100427-1100/junit.jar" description="Path to a JUnit 4 jar." />
+	<property name="svont.install.dir" value="/Users/ralph/SVoNt" description="The base directory where SVoNt is installed." />
+
+	<!-- These properties do not need to be touched. -->
+	<property name="src" location="src" />
+	<property name="build" location="build" />
+	<property name="dist" location="dist" />
+
+	<property name="targetFileName" value="svont.jar" />
+
+	<path id="classpath">
+		<fileset dir="lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="init">
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${build}" />
+	</target>
+
+	<target name="compile" depends="init" description="compile the source ">
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${src}" destdir="${build}">
+			<classpath>
+				<path refid="classpath" />
+				<pathelement path="${junit.jar.path}/" />
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="dist" depends="compile" description="generate the distribution">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}" />
+
+		<!-- Create a property for the classpath, formatted for the manifest file (requires line-wrapping after 72 chars) -->
+		<manifestclasspath property="manifest.classpath" jarfile="${targetFileName}">
+			<classpath refid="classpath" />
+		</manifestclasspath>
+
+		<!-- Put everything in ${build} into the jar file -->
+		<jar jarfile="${dist}/${targetFileName}" basedir="${build}">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Created-By" value="${user.name}" />
+				<section name="common">
+					<attribute name="Specification-Title" value="SVoNt Backend" />
+					<attribute name="Specification-Version" value="${version}" />
+					<attribute name="Specification-Vendor" value="AG Corporate Semantic Web" />
+					<attribute name="Implementation-Title" value="common" />
+					<attribute name="Implementation-Version" value="${version} ${TODAY}" />
+					<attribute name="Implementation-Vendor" value="AG Corporate Semantic Web" />
+				</section>
+				<attribute name="Class-Path" value="${manifest.classpath}" />
+				<attribute name="Main-Class" value="de.fuberlin.agcsw.svont.PreCommitHook" />
+			</manifest>
+
+		</jar>
+	</target>
+
+	<!-- Copies the SVoNt jar file and all dependencies to the SVoNt install directory. -->
+	<target name="deploy" depends="dist">
+		<copy file="${dist}/${targetFileName}" todir="${svont.install.dir}" />
+		<copy todir="${svont.install.dir}">
+			<fileset dir="lib">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+		
+		<exec os="Linux,FreeBSD,Solaris,SunOS,Mac OS X" executable="cp" >
+		</exec>
+	</target>
+
+	<target name="clean" description="clean up">
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${build}" />
+		<delete dir="${dist}" />
+	</target>
+</project>
+

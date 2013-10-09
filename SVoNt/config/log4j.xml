@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration>
+        
+	<appender name="FileAppender" class="org.apache.log4j.FileAppender">
+		<param name="File" value="log/ontsvn.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p %-20C{1} : %m%n"/>
+		</layout>
+	</appender>
+
+
+	<appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p %-3C{1} : %m%n"/>
+		</layout>
+	</appender>
+
+	<logger name="org.mindswap.pellet">
+  		<level value="warn"/> 
+	</logger>
+	
+	<logger name="com.hp.hpl.jena">
+  		<level value="debug"/> 
+	</logger>
+	
+	<logger name="cz.cvut.kbss.owldiff.pellet.Diff">
+  		<level value="warn"/> 
+	</logger>
+	
+	<logger name="cz.cvut.kbss.owldiff.cex.Diff">
+  		<level value="warn"/> 
+	</logger>
+
+ 	<root>
+    	<priority value ="debug" />
+    	<appender-ref ref="FileAppender"/>
+    	<appender-ref ref="ConsoleAppender" />
+  	</root>
+
+
+
+</log4j:configuration>

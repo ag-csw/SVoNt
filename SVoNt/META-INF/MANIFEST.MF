@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.1
+Created-By: ralph
+Built-By: ralph
+Main-Class: de.fuberlin.agcsw.svont.PreCommitHook
+Class-Path: lib/log4j-1.2.15.jar lib/owlapi/owlapi-bin.jar lib/owldiff/a
+ pache-commons/commons-logging-1.1.jar lib/owldiff/explanations/explanat
+ ions-0.9-bin.jar lib/owldiff/owldiff-core-0.1.4.jar lib/pellet/aterm-ja
+ va-1.6.jar lib/pellet/jgrapht/jgrapht-jdk1.5.jar lib/pellet/pellet-cli.
+ jar lib/pellet/pellet-core.jar lib/pellet/pellet-datatypes.jar lib/pell
+ et/pellet-dig.jar lib/pellet/pellet-el.jar lib/pellet/pellet-explanatio
+ n.jar lib/pellet/pellet-jena.jar lib/pellet/pellet-modularity.jar lib/p
+ ellet/pellet-owlapiv3.jar lib/pellet/pellet-pellint.jar lib/pellet/pell
+ et-query.jar lib/pellet/pellet-rules.jar lib/pellet/xsdlib/relaxngDatat
+ ype.jar lib/pellet/xsdlib/xsdlib.jar lib/svnkit/antlr-runtime-3.1.3.jar
+  lib/svnkit/jna.jar lib/svnkit/sqljet.1.0.1.jar lib/svnkit/svnkit-cli.j
+ ar lib/svnkit/svnkit-javahl.jar lib/svnkit/svnkit.jar lib/svnkit/trilea
+ d.jar
+
+Name: common
+Specification-Title: SVoNt Backend
+Specification-Version: ${version}
+Specification-Vendor: AG Corporate Semantic Web
+Implementation-Title: common
+Implementation-Version: ${version} ${TODAY}
+Implementation-Vendor: AG Corporate Semantic Web
+

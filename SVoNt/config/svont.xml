@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment></comment>
+		
+	<!--  Path to SVoNt Root directory -->
+	<entry key="svontBase">D:/workspace/SVoNt/</entry>
+	
+	<!-- svnlook Command -->
+	<entry key="svnlook">D:/Subversion/bin/svnlook.exe </entry>
+	
+	<!-- Java Command -->
+	<entry key="java">/usr/bin/java</entry>
+	
+	<!--  Ontology File that is used for versioning -->
+	<entry key="ontologyFile">ontology.owl</entry>
+	
+	<!--  Ontology directory-->
+	<entry key="ontologyDir">ontologies/</entry>
+	
+	<!--  Flag for writing ChangeLog in the SVN Repositories -->
+    <entry key="changeLogInSVNRepo">false</entry>
+    
+    <!--  subdirectory for changelog -->
+	<entry key="changeLogDir">changelog/</entry>
+	
+	<!--  Base Part of ChangeLog URI -->
+	<entry key="changeLogBaseURI">http://localhost/</entry>
+	
+	<!--  Validation Modul can be just Pellet at the moment -->
+	<entry key="validator">Pellet</entry>
+	
+	<!-- Change Detection Modul - Algorithm for Ontology Diff -->
+	<!--  "Base" : structural diff + Entailments + test of semantical equivalence -->
+	<!--  "CEX" : Base diff + CEX Algorithmn for semantical concept diff  -->
+	<entry key="diff">CEX</entry>
+	
+	<!-- Change Log Writer Module Implementation - "OWLAPI" only at the moment -->
+	<entry key="CLWriter">OWLAPI</entry>
+	
+</properties>

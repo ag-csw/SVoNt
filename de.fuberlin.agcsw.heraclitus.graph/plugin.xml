@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            category="de.fuberlin.agcsw.heraclitus.backend.OntologyCat"
+            class="de.fuberlin.agcsw.heraclitus.graph.ui.views.GraphAnalyseView"
+            id="de.fuberlin.agcsw.heraclitus.graph.ui.GraphAnalyseView"
+            name="Graph Analyse"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="de.fuberlin.agcsw.heraclitus.graph.ui.AnalyseOntologyResourceContribution"
+            nameFilter="*.owl"
+            objectClass="org.eclipse.core.resources.IResource">
+         <action
+               class="de.fuberlin.agcsw.heraclitus.graph.ui.actions.OntologyAnalizeAction"
+               id="de.fuberlin.agcsw.heraclitus.graph..ui.actions.OntologyAnalizeAction"
+               label="Analyse Ontology"
+               menubarPath="de.fuberlin.agcsw.heraclitus.graph.ui.popupMenu.OntologyMenu/ontologyGroup">
+         </action>
+         <menu
+               id="de.fuberlin.agcsw.heraclitus.graph.ui.popupMenu.OntologyMenu"
+               label="Ontology"
+               path="additions">
+            <separator
+                  name="ontologyGroup">
+            </separator>
+         </menu>
+      </objectContribution>
+   </extension>
+
+</plugin>

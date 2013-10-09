@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="lib/owldiff/owldiff-core-0.1.4.jar" sourcepath="lib/owldiff/owldiff-core-0.1.4-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/owldiff/owldiff-standalone-0.1.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/owldiff/apache-commons/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/aterm-java-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/pellet-cli.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/pellet-core.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/pellet-datatypes.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/pellet-dig.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/pellet-el.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/pellet-explanation.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/pellet-jena.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/pellet-modularity.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/pellet-pellint.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/pellet-query.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/pellet-rules.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/jgrapht/jgrapht-jdk1.5.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/xsdlib/relaxngDatatype.jar"/>
+	<classpathentry kind="lib" path="lib/pellet/xsdlib/xsdlib.jar"/>
+	<classpathentry kind="lib" path="lib/owlapi/owlapi-bin.jar" sourcepath="lib/owlapi/owlapi-src.jar"/>
+	<classpathentry kind="output" path="bin"/>
+	<referencedentry kind="lib" path="lib/pellet/pellet-owlapiv3.jar"/>
+</classpath>

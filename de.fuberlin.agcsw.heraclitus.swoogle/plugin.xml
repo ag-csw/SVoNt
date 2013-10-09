@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="de.fuberlin.agcsw.heraclitus.backend.OntologyCat"
+            class="de.fuberlin.agcsw.heraclitus.swoogle.ui.SwoogleView"
+            id="de.fuberlin.agcsw.heraclitus.swoogle.SwoogleView"
+            name="Swoogle View"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="de.fuberlin.agcsw.heraclitus.swoogle.actionSet1"
+            label="Swoogle">
+         <action
+               class="de.fuberlin.agcsw.heraclitus.swoogle.actions.SwoogleAction"
+               id="de.fuberlin.agcsw.heraclitus.swoogle.searchSwoogle"
+               label="Search Swoogle"
+               menubarPath="de.fuberlin.agcsw.heraclitus.backend.Ontology.menu"
+               style="push">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

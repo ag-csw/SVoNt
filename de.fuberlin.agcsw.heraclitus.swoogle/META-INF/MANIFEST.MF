@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Swoogle
+Bundle-SymbolicName: de.fuberlin.agcsw.heraclitus.swoogle;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.fuberlin.agcsw.heraclitus.swoogle.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ de.fuberlin.agcsw.heraclitus.backend;bundle-version="1.0.0",
+ de.fuberlin.agcsw.heraclitus.graph;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="lib/commons-codec-1.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/slf4j-api-1.5.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/slf4j-jdk14-1.5.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/sesame/openrdf-sesame-2.3-pr1-onejar.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/httpclient/httpclient-4.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/httpclient/httpcore-4.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/httpclient/httpcore-nio-4.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/httpclient/httpmime-4.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/xsdlib/relaxngDatatype.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/xsdlib/xsdlib.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/jgrapht/jgrapht-jdk1.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/aterm-java-1.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/pellet-cli.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/pellet-core.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/pellet-datatypes.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/pellet-dig.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/pellet-el.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/pellet-explanation.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/pellet-jena.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/pellet-modularity.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/pellet-owlapi.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/pellet-pellint.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/pellet-query.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/pellet/pellet-rules.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/owlapi/owlapi-bin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

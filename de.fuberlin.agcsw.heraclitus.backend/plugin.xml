@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="de.fuberlin.agcsw.heraclitus.backend.OntologyCat"
+            name="Ontology">
+      </category>
+      <view
+            allowMultiple="false"
+            category="de.fuberlin.agcsw.heraclitus.backend.OntologyCat"
+            class="de.fuberlin.agcsw.heraclitus.backend.ui.views.OntologyInformationView"
+            id="de.fuberlin.agcsw.heraclitus.backend.ui.OntologyInformationView"
+            name="Ontology Information View"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="false"
+            category="de.fuberlin.agcsw.heraclitus.backend.OntologyCat"
+            class="de.fuberlin.agcsw.heraclitus.backend.ui.views.ConceptTreeExplorerView"
+            id="de.fuberlin.agcsw.heraclitus.backend.ui.ConceptExplorerView"
+            name="Concept Explorer"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="de.fuberlin.agcsw.heraclitus.backend.ProjectContribution"
+            objectClass="org.eclipse.core.resources.IProject">
+         <menu
+               id="de.fuberlin.agcsw.heraclitus.backend.ui.popupMenu.OntologyMenu"
+               label="Ontology"
+               path="additions">
+            <separator
+                  name="ontologyGroup">
+            </separator>
+         </menu>
+         <action
+               class="de.fuberlin.agcsw.heraclitus.backend.ui.actions.CreateOntologyProjectAction"
+               enablesFor="1"
+               id="de.fuberlin.agcsw.heraclitus.backend.LoadAsOntologyAction"
+               label="Load as Ontology Project"
+               menubarPath="de.fuberlin.agcsw.heraclitus.backend.ui.popupMenu.OntologyMenu/ontologyGroup">
+         </action>
+         <action
+               class="de.fuberlin.agcsw.heraclitus.backend.ui.actions.OpenConceptTreeAction"
+               id="de.fuberlin.agcsw.heraclitus.backend.OpenConceptTreeAction"
+               label="Open Concept Tree"
+               menubarPath="de.fuberlin.agcsw.heraclitus.backend.ui.popupMenu.OntologyMenu/ontologyGroup">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <wizard
+            category="de.fuberlin.agcsw.heraclitus.backend.ui.categorie.ontology"
+            class="de.fuberlin.agcsw.heraclitus.backend.ui.wizards.OntologyImportWizard"
+            id="de.fuberlin.agcsw.heraclitus.backend.ui.wizard.importOntology"
+            name="Import Ontology">
+      </wizard>
+      <category
+            id="de.fuberlin.agcsw.heraclitus.backend.ui.categorie.ontology"
+            name="Ontology">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="de.fuberlin.agcsw.heraclitus.backend.ui.OntologyPerspective"
+            id="de.fuberlin.agcsw.heraclitus.backend.ui.OntologyPerspective"
+            name="Ontology Perspective">
+      </perspective>
+   </extension>
+
+</plugin>

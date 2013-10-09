@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY badExpressivity "http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl"
+     xmlns:badExpressivity="http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#hasBacklight -->
+
+    <owl:ObjectProperty rdf:about="#hasBacklight">
+        <rdfs:subPropertyOf rdf:resource="#hasUitls"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#hasTree -->
+
+    <owl:ObjectProperty rdf:about="#hasTree">
+        <owl:disjointObjectProperties rdf:resource="#hasUitls"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#hasUitls -->
+
+    <owl:ObjectProperty rdf:about="#hasUitls">
+        <rdfs:domain rdf:resource="#Car"/>
+        <rdfs:range rdf:resource="#Lenkrad"/>
+        <owl:inverseOf rdf:resource="#inverseProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#inverseProperty -->
+
+    <owl:ObjectProperty rdf:about="#inverseProperty">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="#InverseConcept"/>
+        <rdfs:range rdf:resource="#Tree"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#numberOfWheels -->
+
+    <owl:DatatypeProperty rdf:about="#numberOfWheels">
+        <rdfs:domain rdf:resource="#Car"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#numberOfWheels"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">4</owl:maxCardinality>
+                <owl:Class rdf:resource="&rdf;XMLLiteral"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#Backlight -->
+
+    <owl:Class rdf:about="#Backlight">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#Car -->
+
+    <owl:Class rdf:about="#Car">
+        <owl:equivalentClass rdf:resource="#Vehicle"/>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:disjointWith rdf:resource="#Tree"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#CarwithBackliht -->
+
+    <owl:Class rdf:about="#CarwithBackliht">
+        <rdfs:subClassOf rdf:resource="#Backlight"/>
+        <rdfs:subClassOf rdf:resource="#Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#InverseConcept -->
+
+    <owl:Class rdf:about="#InverseConcept">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#Lenkrad -->
+
+    <owl:Class rdf:about="#Lenkrad">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#Tree -->
+
+    <owl:Class rdf:about="#Tree">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#Van -->
+
+    <owl:Class rdf:about="#Van">
+        <rdfs:subClassOf rdf:resource="#Car"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#Vehicle -->
+
+    <owl:Class rdf:about="#Vehicle">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#MyAuto -->
+
+    <Car rdf:about="#MyAuto">
+        <numberOfWheels rdf:datatype="&xsd;integer">4</numberOfWheels>
+    </Car>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#SuperLenkrad -->
+
+    <Lenkrad rdf:about="#SuperLenkrad"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#inverseconcept -->
+
+    <InverseConcept rdf:about="#inverseconcept"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2009/5/badExpressivity.owl#neuesLenkrad -->
+
+    <Lenkrad rdf:about="#neuesLenkrad"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="#SuperLenkrad"/>
+            <rdf:Description rdf:about="#neuesLenkrad"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1042) http://owlapi.sourceforge.net -->
+
